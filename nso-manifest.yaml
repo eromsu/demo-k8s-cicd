@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test-nso
+  name: test-nso
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-nso
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test-nso
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        command: 
+        - /bin/bash
+        - -c
+        - ncs
+        resources: {}
+status: {}
